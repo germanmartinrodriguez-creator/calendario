@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Calendario Premium</title>
+    
+    <link rel="manifest" href="app-config.json">
+    <meta name="theme-color" content="#C2185B">
+    
+    <link rel="icon" type="image/png" href="logo-premium.png">
+    <link rel="apple-touch-icon" href="logo-premium.png">
+
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .container { 
+            text-align: center; 
+            background: white; 
+            padding: 3rem; 
+            border-radius: 30px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        h1 { color: #C2185B; margin-bottom: 10px; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Calendario</h1>
+        <p>Tu nueva aplicación está lista.</p>
+    </div>
+
+    <script>
+        // Registrar el Service Worker (necesario para que Chrome vea el icono)
+        if ('service-worker' in navigator) {
+            navigator.serviceWorker.register('sw-calendario.js');
+        }
+    </script>
+</body>
+</html>
 
