@@ -21,7 +21,7 @@
     --text:#1e293b;
     --muted:#94a3b8;
     --border:#e2e8f0;
-    --accent:#C2185B; /* Color acento cambiado a rojo premium */
+    --accent:#C2185B; /* Rojo premium */
     --col-weekend-bg:#ff0000;
     --col-weekend-text:#fff;
     --col-holiday-bg:#00b300;
@@ -33,6 +33,7 @@
     --radius:20px;
     --shadow:0 8px 24px rgba(0,0,0,.10);
   }
+  /* ... resto de tus estilos originales ... */
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0;}
   body{
     font-family:'Nunito',sans-serif;
@@ -46,93 +47,36 @@
     padding: env(safe-area-inset-top,16px) env(safe-area-inset-right,12px) env(safe-area-inset-bottom,16px) env(safe-area-inset-left,12px);
   }
   .app{width:100%;max-width:480px;padding:12px 0 24px;}
-
-  /* HEADER */
-  .header{
-    background:var(--card);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:16px 18px 14px;
-    margin-bottom:12px;
-  }
+  .header{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px 14px;margin-bottom:12px;}
   .brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-  .brand-icon{
-    width:40px;height:40px;border-radius:12px;
-    background:var(--accent);
-    display:flex;align-items:center;justify-content:center;
-    flex:none;
-  }
+  .brand-icon{width:40px;height:40px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:none;}
   .brand-icon svg{width:22px;height:22px;fill:#fff;}
   .brand-text .title{font-size:16px;font-weight:900;color:var(--text);}
   .brand-text .sub{font-size:11px;color:var(--muted);font-weight:700;}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-  .nav-btn{
-    background:#f1f5f9;border:none;border-radius:12px;
-    width:42px;height:42px;font-size:16px;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    color:var(--text);font-weight:900;transition:background .15s;
-  }
+  .nav-btn{background:#f1f5f9;border:none;border-radius:12px;width:42px;height:42px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);font-weight:900;transition:background .15s;}
   .nav-btn:active{background:#e2e8f0;}
   .month-label{font-size:22px;font-weight:900;text-transform:capitalize;text-align:center;flex:1;}
-  .today-btn{
-    background:var(--accent);color:#fff;border:none;
-    border-radius:12px;padding:10px 18px;font-size:13px;
-    font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;
-    transition:opacity .15s;
-  }
+  .today-btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;transition:opacity .15s;}
   .today-btn:active{opacity:.8;}
-
-  /* LEGEND */
-  .legend{
-    display:flex;flex-wrap:wrap;gap:6px 12px;
-    margin-top:12px;padding-top:12px;border-top:1px solid var(--border);
-    justify-content:center;
-  }
+  .legend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);justify-content:center;}
   .leg{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#64748b;}
   .leg-dot{width:12px;height:12px;border-radius:4px;flex:none;}
-
-  /* CALENDAR */
-  .calendar{
-    background:var(--card);border-radius:var(--radius);
-    box-shadow:var(--shadow);padding:14px;
-  }
-  .weekdays{
-    display:grid;grid-template-columns:repeat(7,1fr);
-    gap:4px;margin-bottom:4px;
-  }
-  .weekday{
-    text-align:center;font-size:11px;font-weight:900;
-    color:#94a3b8;padding:6px 0;
-  }
+  .calendar{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
+  .weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px;}
+  .weekday{text-align:center;font-size:11px;font-weight:900;color:#94a3b8;padding:6px 0;}
   .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
   .empty{aspect-ratio:1;}
-  .day{
-    aspect-ratio:1;border-radius:12px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    font-size:16px;font-weight:800;cursor:pointer;
-    background:#f8fafc;color:var(--text);
-    transition:transform .12s;border:1.5px solid transparent;
-    -webkit-user-select:none;user-select:none;
-  }
+  .day{aspect-ratio:1;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:16px;font-weight:800;cursor:pointer;background:#f8fafc;color:var(--text);transition:transform .12s;border:1.5px solid transparent;-webkit-user-select:none;user-select:none;}
   .day:active{transform:scale(.9);}
   .day.weekend{background:var(--col-weekend-bg);color:var(--col-weekend-text);border-color:#cc0000;}
   .day.holiday{background:var(--col-holiday-bg);color:var(--col-holiday-text);border-color:#008f00;}
   .day.vacation{background:var(--col-vacation-bg);color:var(--col-vacation-text);border-color:#d4a900;}
   .day.past{opacity:.38;}
-  .day.today{
-    background:var(--today-bg) !important;color:var(--today-text) !important;
-    border-color:var(--today-bg) !important;
-    box-shadow:0 4px 14px rgba(194,24,91,.45);
-  }
+  .day.today{background:var(--today-bg) !important;color:var(--today-text) !important;border-color:var(--today-bg) !important;box-shadow:0 4px 14px rgba(194,24,91,.45);}
   .day.today .dnum{font-size:18px;font-weight:900;line-height:1;}
   .day.today .dlbl{font-size:8px;font-weight:800;opacity:.85;text-transform:uppercase;letter-spacing:.04em;line-height:1;margin-top:1px;}
-
   .foot{text-align:center;font-size:11px;color:var(--muted);margin-top:12px;font-weight:700;}
-
-  @media(max-width:360px){
-    .day{font-size:14px;border-radius:10px;}
-    .month-label{font-size:18px;}
-  }
 </style>
 </head>
 <body>
@@ -154,7 +98,7 @@
       <button class="nav-btn" onclick="nextMonth()">▶</button>
     </div>
     <div class="legend">
-      <div class="leg"><div class="leg-dot" style="background:#C2185B"></div>Hoy</div>
+      <div class="leg"><div class="leg-dot" style="background:var(--accent)"></div>Hoy</div>
       <div class="leg"><div class="leg-dot" style="background:#ff0000"></div>Fin semana</div>
       <div class="leg"><div class="leg-dot" style="background:#00b300"></div>Festivo</div>
       <div class="leg"><div class="leg-dot" style="background:#ffcc00;border:1px solid #bfa000"></div>Vacaciones</div>
@@ -173,16 +117,11 @@
 </div>
 
 <script>
-const holidays={
-  "2026-01-01":1,"2026-01-06":1,"2026-04-03":1,"2026-04-06":1,
-  "2026-05-01":1,"2026-05-25":1,"2026-06-24":1,"2026-08-15":1,
-  "2026-09-11":1,"2026-09-24":1,"2026-10-12":1,
-  "2026-12-08":1,"2026-12-25":1,"2026-12-26":1
-};
+// ... tu lógica original de calendario ...
+const holidays={"2026-01-01":1,"2026-01-06":1,"2026-04-03":1,"2026-04-06":1,"2026-05-01":1,"2026-05-25":1,"2026-06-24":1,"2026-08-15":1,"2026-09-11":1,"2026-09-24":1,"2026-10-12":1,"2026-12-08":1,"2026-12-25":1,"2026-12-26":1};
 const monthNames=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const cycle=['weekend','holiday','vacation',''];
 let now=new Date(),year=now.getFullYear(),month=now.getMonth();
-
 function pad(n){return String(n).padStart(2,"0");}
 function mondayBasedDay(d){return d===0?6:d-1;}
 function dateKey(y,m,d){return y+"-"+pad(m+1)+"-"+pad(d);}
@@ -190,19 +129,8 @@ function isToday(y,m,d){const t=new Date();return t.getFullYear()===y&&t.getMont
 function isPast(y,m,d){const t=new Date();t.setHours(0,0,0,0);return new Date(y,m,d).getTime()<t.getTime();}
 function getStored(k){try{return localStorage.getItem("col_"+k)||'';}catch(e){return '';}}
 function setStored(k,v){try{v===''?localStorage.removeItem("col_"+k):localStorage.setItem("col_"+k,v);}catch(e){}}
-
-function defaultColor(date,key){
-  if(holidays[key])return 'holiday';
-  const d=date.getDay();
-  if(d===0||d===6)return 'weekend';
-  return '';
-}
-
-function applyColor(cell,color){
-  cell.classList.remove('weekend','holiday','vacation');
-  if(color)cell.classList.add(color);
-}
-
+function defaultColor(date,key){if(holidays[key])return 'holiday';const d=date.getDay();if(d===0||d===6)return 'weekend';return '';}
+function applyColor(cell,color){cell.classList.remove('weekend','holiday','vacation');if(color)cell.classList.add(color);}
 function render(){
   const grid=document.getElementById("grid");
   document.getElementById("title").textContent=monthNames[month]+" "+year;
@@ -246,7 +174,7 @@ function prevMonth(){month--;if(month<0){month=11;year--;}render();}
 function nextMonth(){month++;if(month>11){month=0;year++;}render();}
 function goToday(){const t=new Date();year=t.getFullYear();month=t.getMonth();render();}
 
-// REGISTRO DEL NUEVO SERVICE WORKER
+// NUEVO REGISTRO DEL SERVICE WORKER
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('sw-premium.js').catch(function(){});
 }
