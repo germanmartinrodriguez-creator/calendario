@@ -1,0 +1,16 @@
+{
+  "name": "Calendario Barcelona Premium",
+  "short_name": "Calendario",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f0f4f8",
+  "theme_color": "#C2185B",
+  "icons": [
+    {
+      "src": "logo-premium.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
